@@ -2,7 +2,7 @@ import { NavCart } from "./NavCart";
 
 export const Navi = () => {
   return (
-    <nav className='flex justify-center items-center mx-auto gap-7 max-w-[1500px] flex-wrap my-10'>
+    <nav className='flex justify-center items-center mx-auto gap-7 max-w-[1500px] flex-wrap my-10 '>
       <NavCart href='/' icon='🏠' title='Home Page' />
       <NavCart href='/mobile-view' icon='📱' title='Full mobile view' />
       <NavCart href='/carousels' icon='🎡' title='Carousels' />

@@ -77,7 +77,7 @@ export const CodePreviewNav = ({
         {isVariant && <ListboxVariants setPickedVariant={setPickedVariant} />}
       </div>
       {!basic && (
-        <div className='flex gap-5'>
+        <div className='flex gap-5 flex-wrap'>
           <ResizeButtonNav
             icon='📱'
             name='Mobile'

@@ -50,7 +50,7 @@ export const ToolkitElementSection = ({
   const [isScriptView, setIsScriptView] = useState(false);
 
   return (
-    <section className=' my-5 px-0 pb-3 rounded-xl max-w-[1600px]'>
+    <section className=' my-5 px-0 pb-3 rounded-xl max-w-[1400px]'>
       <CodePreviewNav
         setSize={setSize}
         isView={isView}
