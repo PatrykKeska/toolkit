@@ -1,8 +1,11 @@
-import { ToolkitElementSection } from "@/components/CodePreview/ToolkitElementSection";
+"use client";
+import { Accordions } from "@/components/accordions/Accordions";
 import { Navi } from "@/components/nav/Navi";
 import { cssDB } from "@/db/css.db";
+import { useState } from "react";
 
 export default function Home() {
+  const [openTab, setOpenTab] = useState(false);
   return (
     <main className='w-full flex flex-col items-center'>
       <div className='my-4 gap-3 w-5/6 flex flex-col items-center justify-center'>
@@ -24,11 +27,11 @@ export default function Home() {
       </div>
 
       <section className='w-full'>
-        <ToolkitElementSection
-          basic
-          elementName='Toolkit.css'
-          language='css'
-          textCode={cssDB}
+        <Accordions
+          btnText='Click to open Toolkit.css'
+          setModifier={setOpenTab}
+          modifier={openTab}
+          code={cssDB}
         />
       </section>
       <h2 className='text-2xl font-bold w-full text-green-400 text-center'>
