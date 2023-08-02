@@ -69,7 +69,7 @@
   --accordion-theme-blue: #10447d;
 }
 
-/* Headings Responsive Fonts  */
+/* Headings Responsive Fonts Start */
 
 .basic-title-sm {
   font-size: var(--fs-basic-sm);
@@ -129,6 +129,9 @@
   font-weight: 400;
   margin: 0;
 }
+
+/* Headings Responsive Fonts End */
+
 
 /* Mobile view full width start */
 

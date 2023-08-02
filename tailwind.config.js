@@ -14,5 +14,14 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant('open', ({ container }) => {
+        container.walkRules(rule => {
+          rule.selector = `details[open] ${rule.selector}`;
+        });
+      });
+    },
+
+  ],
 }
