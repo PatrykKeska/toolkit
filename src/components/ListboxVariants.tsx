@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
+import { ToolkitDisplayInterface } from "./CodePreview/ToolkitElementSection";
 
 const size = [
   { size: 0, description: "small" },
@@ -8,16 +9,21 @@ const size = [
 ];
 
 interface ListboxVariantsProps {
-  setPickedVariant: (variant: number) => void;
+  setToolkitDisplay: (arg: ToolkitDisplayInterface) => void;
+  toolkitDisplay: ToolkitDisplayInterface;
 }
 
 export default function ListboxVariants({
-  setPickedVariant,
+  setToolkitDisplay,
+  toolkitDisplay,
 }: ListboxVariantsProps) {
   const [selected, setSelected] = useState(size[0]);
 
   useEffect(() => {
-    setPickedVariant(selected.size);
+    setToolkitDisplay({
+      ...toolkitDisplay,
+      pickedVariant: selected.size,
+    });
   }, [selected]);
 
   return (

@@ -1,26 +1,41 @@
 import { Transition } from "@headlessui/react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { agate, arta } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { ToolkitDisplayInterface } from "./ToolkitElementSection";
+import { useCopyToClipboard } from "@/hooks/useCoppyToClipboard";
 
 interface CodePreviewProps {
-  isView: boolean;
-  textCode: string | undefined;
+  isHtmlView?: boolean;
+  htmlCode?: string | undefined;
   language: "javascript" | "css";
   variant?: string;
+  toolkitDisplay: ToolkitDisplayInterface;
+  setToolkitDisplay: (arg: ToolkitDisplayInterface) => void;
 }
 
-export const CodePreview = ({
-  isView,
-  textCode,
+export const HtmlPreview = ({
+  isHtmlView,
+  htmlCode,
   language,
   variant,
+  toolkitDisplay,
+  setToolkitDisplay,
 }: CodePreviewProps) => {
-  if (!textCode) return null;
+  const { isCopied } = toolkitDisplay;
+  useCopyToClipboard(
+    isCopied,
+    toolkitDisplay,
+    setToolkitDisplay,
+    htmlCode,
+    variant
+  );
+  if (!htmlCode) return null;
+
   return (
     <>
       <div className='min-h-[800px] w-full mx-auto overflow-hidden'>
         <Transition
-          show={isView}
+          show={isHtmlView}
           enter='transition-opacity duration-300'
           enterFrom='opacity-0'
           enterTo='opacity-100'
@@ -33,7 +48,7 @@ export const CodePreview = ({
             language={language}
             style={language === "javascript" ? agate : arta}
           >
-            {variant ? variant : textCode}
+            {variant ? variant : htmlCode}
           </SyntaxHighlighter>
         </Transition>
       </div>

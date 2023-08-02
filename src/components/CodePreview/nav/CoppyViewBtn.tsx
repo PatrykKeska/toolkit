@@ -1,42 +1,74 @@
-"use client";
-
 import clsx from "clsx";
-import { useState } from "react";
+import { ToolkitDisplayInterface } from "../ToolkitElementSection";
 
 interface CoppyViewBtnProps {
-  text: string | undefined;
-  type: "coppy" | "view" | "reverse" | "script";
-  isView: boolean;
-  setIsView: (arg: boolean) => void;
-  isScriptView?: boolean;
-  setIsScriptView?: (arg: boolean) => void;
+  type: "coppy" | "view" | "reverse" | "script" | "css" | "html";
+  toolkitDisplay: ToolkitDisplayInterface;
+  setToolkitDisplay: (arg: ToolkitDisplayInterface) => void;
 }
 export const CoppyViewBtn = ({
-  text,
   type,
-  isView,
-  setIsView,
-  isScriptView,
-  setIsScriptView,
+  toolkitDisplay,
+  setToolkitDisplay,
 }: CoppyViewBtnProps) => {
-  const [isCoppied, setIsCopied] = useState(false);
+  const {
+    isCssView,
+    isHtmlView,
+    isPreview,
+    isReverse,
+    isScriptView,
+    isCopied,
+  } = toolkitDisplay;
 
   const handleClipboard = () => {
-    if (!text) return;
-    navigator.clipboard.writeText(text);
-    setIsCopied(true);
-    setTimeout(() => {
-      setIsCopied(false);
-    }, 1500);
+    setToolkitDisplay({
+      ...toolkitDisplay,
+      isCopied: true,
+    });
   };
 
   const handleViewModes = () => {
     if (type === "view") {
-      setIsView(!isView);
-      setIsScriptView && setIsScriptView(false);
-    } else if (type === "script") {
-      setIsView(false);
-      setIsScriptView && setIsScriptView(!isScriptView);
+      setToolkitDisplay({
+        ...toolkitDisplay,
+        isPreview: true,
+        isHtmlView: false,
+        isCssView: false,
+        isScriptView: false,
+      });
+    }
+    if (type === "html") {
+      setToolkitDisplay({
+        ...toolkitDisplay,
+        isPreview: false,
+        isHtmlView: true,
+        isCssView: false,
+        isScriptView: false,
+      });
+    }
+    if (type === "css") {
+      setToolkitDisplay({
+        ...toolkitDisplay,
+        isPreview: false,
+        isHtmlView: false,
+        isCssView: true,
+        isScriptView: false,
+      });
+    }
+    if (type === "script") {
+      setToolkitDisplay({
+        ...toolkitDisplay,
+        isPreview: false,
+        isHtmlView: false,
+        isCssView: false,
+        isScriptView: true,
+      });
+    }
+    if (type === "reverse") {
+      setToolkitDisplay({
+        ...toolkitDisplay,
+        isReverse: !isReverse,
+      });
     }
   };
   return (
@@ -45,11 +77,33 @@ export const CoppyViewBtn = ({
         <button
           className={clsx(
             "font-light w-32 h-10 grid place-items-center border-2 rounded-xl hover:bg-green-600 transition-all border-green-600",
-            isView && "bg-green-600"
+            isPreview && "bg-green-600"
           )}
           onClick={handleViewModes}
         >
-          👀 View
+          👀 Preview
+        </button>
+      )}
+      {type === "html" && (
+        <button
+          className={clsx(
+            "font-light w-32 h-10 grid place-items-center border-2 rounded-xl hover:bg-green-600 transition-all border-green-600",
+            isHtmlView && "bg-green-600"
+          )}
+          onClick={handleViewModes}
+        >
+          🏗️ Html
+        </button>
+      )}
+      {type === "css" && (
+        <button
+          className={clsx(
+            "font-light w-32 h-10 grid place-items-center border-2 rounded-xl hover:bg-green-600 transition-all border-green-600",
+            isCssView && "bg-green-600"
+          )}
+          onClick={handleViewModes}
+        >
+          🎨 Css
         </button>
       )}
       {type === "coppy" && (
@@ -59,7 +113,7 @@ export const CoppyViewBtn = ({
           )}
           onClick={handleClipboard}
         >
-          {isCoppied ? "🎉 Coppied" : "📋 Coppy"}
+          {isCopied ? "🎉 Coppied" : "📋 Coppy"}
         </button>
       )}
       {type === "script" && (

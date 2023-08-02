@@ -1,31 +1,30 @@
 import { Transition } from "@headlessui/react";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { arta } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { ToolkitDisplayInterface } from "./ToolkitElementSection";
 import { useCopyToClipboard } from "@/hooks/useCoppyToClipboard";
-interface ScriptPreviewProps {
-  isScriptView: boolean;
-  script?: string;
+
+interface CssPreviewProps {
+  isCssPreview: boolean;
+  cssCode?: string;
   toolkitDisplay: ToolkitDisplayInterface;
   setToolkitDisplay: (arg: ToolkitDisplayInterface) => void;
 }
 
-export const ScriptPreview = ({
-  isScriptView,
-  script,
+export const CssPreveiw = ({
+  isCssPreview,
+  cssCode,
   setToolkitDisplay,
   toolkitDisplay,
-}: ScriptPreviewProps) => {
+}: CssPreviewProps) => {
   const { isCopied } = toolkitDisplay;
-  useCopyToClipboard(isCopied, toolkitDisplay, setToolkitDisplay, script);
-
-  if (!script) return null;
+  useCopyToClipboard(isCopied, toolkitDisplay, setToolkitDisplay, cssCode);
 
   return (
     <>
       <div className='min-h-[800px] w-full mx-auto overflow-hidden'>
         <Transition
-          show={isScriptView}
+          show={isCssPreview}
           enter='transition-opacity duration-300'
           enterFrom='opacity-0'
           enterTo='opacity-100'
@@ -33,13 +32,15 @@ export const ScriptPreview = ({
           leaveFrom='opacity-100'
           leaveTo='opacity-0'
         >
-          <SyntaxHighlighter
-            className='min-h-[800px] w-full mx-auto overflow-hidden'
-            language='javascript'
-            style={dracula}
-          >
-            {script}
-          </SyntaxHighlighter>
+          {cssCode && (
+            <SyntaxHighlighter
+              className='min-h-[800px] w-full mx-auto overflow-hidden'
+              language='css'
+              style={arta}
+            >
+              {cssCode}
+            </SyntaxHighlighter>
+          )}
         </Transition>
       </div>
     </>

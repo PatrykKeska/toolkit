@@ -1,4 +1,5 @@
 import { ToolkitElementSection } from "@/components/CodePreview/ToolkitElementSection";
+import { blogCardsCss } from "@/db/css/blogCards/blogCards.css";
 import { blogCard } from "@/db/html/blog-cards/blogCard";
 import { PageLayout } from "@/layout/pageLayout";
 
@@ -7,7 +8,8 @@ const BlogCardsPage = () => {
     <PageLayout>
       <ToolkitElementSection
         language='javascript'
-        textCode={blogCard}
+        htmlCode={blogCard}
+        cssCode={blogCardsCss}
         elementName='Blog Card'
       />
     </PageLayout>

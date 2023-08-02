@@ -14,14 +14,14 @@ const CountersPage = ({}: CountersPageProps) => {
         language='javascript'
         isScript={true}
         scriptCode={basicCounterScript}
-        textCode={basicCounter}
+        htmlCode={basicCounter}
         elementName='Counter v1'
       />
       <ToolkitElementSection
         language='javascript'
         isScript={true}
         scriptCode={counterV2Script}
-        textCode={counter2}
+        htmlCode={counter2}
         elementName='Counter v2'
       />
     </PageLayout>

@@ -1,26 +1,26 @@
 import clsx from "clsx";
-import { PickedSize, Size } from "../ToolkitElementSection";
+import { Size, ToolkitDisplayInterface } from "../ToolkitElementSection";
 
 interface ResizeButtonNavProps {
-  setSize: (arg: Size) => void;
   name: string;
   icon: string;
+  toolkitDisplay: ToolkitDisplayInterface;
+  setToolkitDisplay: (arg: ToolkitDisplayInterface) => void;
   size: Size;
-  pickedSize: PickedSize;
-  setPickedSize: (arg: any) => void;
 }
 
 export const ResizeButtonNav = ({
-  setSize,
   name,
   icon,
+  setToolkitDisplay,
+  toolkitDisplay,
   size,
-  pickedSize,
-  setPickedSize,
 }: ResizeButtonNavProps) => {
   const handleClick = () => {
-    setSize(size);
-    setPickedSize(size);
+    setToolkitDisplay({
+      ...toolkitDisplay,
+      size,
+    });
   };
 
   return (
@@ -28,7 +28,7 @@ export const ResizeButtonNav = ({
       <button
         className={clsx(
           "font-light w-32 h-10 grid place-items-center border-2 rounded-xl hover:bg-green-600 transition-all border-green-600",
-          size.toString() === pickedSize.toString() && "bg-green-600"
+          size === toolkitDisplay.size && "bg-green-600"
         )}
         onClick={handleClick}
       >

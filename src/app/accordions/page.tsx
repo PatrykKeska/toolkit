@@ -10,7 +10,7 @@ const AccordionsPage = ({}: AccordionsPageProps) => {
   return (
     <PageLayout>
       <ToolkitElementSection
-        textCode={accordion}
+        htmlCode={accordion}
         scriptCode={accordionScript}
         isScript={true}
         language='javascript'
@@ -18,7 +18,7 @@ const AccordionsPage = ({}: AccordionsPageProps) => {
       />
 
       <ToolkitElementSection
-        textCode={simpleAccordion}
+        htmlCode={simpleAccordion}
         language='javascript'
         elementName='Accordion Only HTML & CSS'
       />

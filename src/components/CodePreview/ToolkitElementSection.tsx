@@ -1,13 +1,14 @@
 "use client";
 import { useState } from "react";
 import { CodePreviewNav } from "./nav/CodePreviewNav";
-import { CodePreview } from "./CodePreview";
 import { RenderHtml } from "./RenderHtml";
-
 import "../../toolkit/toolkit.css";
 import { ScriptPreview } from "./ScriptPreview";
+import { CssPreveiw } from "./CssPreview";
+import { HtmlPreview } from "./HtmlPreview";
+import { PreviewBackground } from "./PreviewBackground";
 interface ToolkitElementSectionProps {
-  textCode: string;
+  htmlCode: string;
   language: "javascript" | "css";
   elementName?: string;
   basic?: boolean;
@@ -17,6 +18,7 @@ interface ToolkitElementSectionProps {
   variants?: string[];
   scriptCode?: string;
   isScript?: boolean;
+  cssCode?: string;
 }
 
 export enum Size {
@@ -25,14 +27,19 @@ export enum Size {
   desktop = "1920px",
 }
 
-export enum PickedSize {
-  mobile = "360px",
-  tablet = "600px",
-  desktop = "1920px",
+export interface ToolkitDisplayInterface {
+  isPreview: boolean;
+  isHtmlView: boolean;
+  isCssView: boolean;
+  isScriptView: boolean;
+  isReverse: boolean;
+  size: Size;
+  pickedVariant: number;
+  isCopied: boolean;
 }
 
 export const ToolkitElementSection = ({
-  textCode,
+  htmlCode,
   language,
   elementName,
   basic,
@@ -41,60 +48,71 @@ export const ToolkitElementSection = ({
   isVariant,
   scriptCode,
   isScript,
+  cssCode,
 }: ToolkitElementSectionProps) => {
-  const [isView, setIsView] = useState(false);
-  const [size, setSize] = useState(Size.desktop);
-  const [pickedSize, setPickedSize] = useState(PickedSize.desktop);
-  const [isReverse, setIsReverse] = useState(false);
-  const [pickedVariant, setPickedVariant] = useState(0);
-  const [isScriptView, setIsScriptView] = useState(false);
+  const [ToolkitDisplay, setToolkitDisplay] = useState<ToolkitDisplayInterface>(
+    {
+      isPreview: true,
+      isHtmlView: false,
+      isCssView: false,
+      isScriptView: false,
+      isReverse: false,
+      size: Size.desktop,
+      isCopied: false,
+      pickedVariant: 0,
+    }
+  );
 
   return (
     <section className=' my-5 px-0 pb-3 rounded-xl max-w-[1400px]'>
       <CodePreviewNav
-        setSize={setSize}
-        isView={isView}
-        setIsView={setIsView}
-        textCode={textCode}
-        pickedSize={pickedSize}
-        setPickedSize={setPickedSize}
+        ToolkitDisplay={ToolkitDisplay}
+        setToolkitDisplay={setToolkitDisplay}
         basic={basic}
-        isReverse={isReverse}
-        setIsReverse={setIsReverse}
-        showReverseButton={reverseTextCode ? true : false}
-        setPickedVariant={setPickedVariant}
         isVariant={isVariant}
-        isScriptView={isScriptView}
-        setIsScriptView={setIsScriptView}
-        scriptCode={scriptCode}
         isScript={isScript}
+        isReverse={reverseTextCode ? true : false}
+        showReverseButton={reverseTextCode ? true : false}
       />
       <h2 className='text-2xl uppercase font-bold'>{elementName}</h2>
-      <div className='border-2 w-[100%] bg-slate-100 rounded-md bg-[linear-gradient(45deg,_rgb(249_250_251)_25%,_transparent_25%),_linear-gradient(-45deg,_rgb(249_250_251)_25%,_transparent_25%),_linear-gradient(45deg,_transparent_75%,_rgb(249_250_251)_75%),_linear-gradient(-45deg,_transparent_75%,_rgb(249_250_251)_75%)] bg-[length:_20px_20px] [background-position:_0_0,_0_10px,_10px_-10px,_-10px_0px] '>
-        {isView ? (
-          <>
-            <CodePreview
-              variant={variants && variants[pickedVariant]}
-              language={language}
-              isView={isView}
-              textCode={!isReverse ? textCode : reverseTextCode}
-            />
-          </>
-        ) : (
-          isScriptView &&
-          !isView && (
-            <ScriptPreview isScriptView={isScriptView} script={scriptCode} />
-          )
-        )}
-        {!isView && !isScriptView && language === "javascript" && (
+      <PreviewBackground>
+        {ToolkitDisplay.isPreview && (
           <RenderHtml
-            variant={variants && variants[pickedVariant]}
-            size={size}
-            textCode={!isReverse ? textCode : reverseTextCode}
+            htmlCode={ToolkitDisplay.isReverse ? reverseTextCode : htmlCode}
             script={scriptCode}
+            cssCode={cssCode}
+            variant={variants && variants[ToolkitDisplay.pickedVariant]}
+            size={ToolkitDisplay.size}
+            isReverse={ToolkitDisplay.isReverse}
           />
         )}
-      </div>
+        {ToolkitDisplay.isHtmlView && (
+          <HtmlPreview
+            language='javascript'
+            variant={variants && variants[ToolkitDisplay.pickedVariant]}
+            isHtmlView={ToolkitDisplay.isHtmlView}
+            htmlCode={ToolkitDisplay.isReverse ? reverseTextCode : htmlCode}
+            toolkitDisplay={ToolkitDisplay}
+            setToolkitDisplay={setToolkitDisplay}
+          />
+        )}
+        {ToolkitDisplay.isScriptView && (
+          <ScriptPreview
+            isScriptView={ToolkitDisplay.isScriptView}
+            script={scriptCode}
+            toolkitDisplay={ToolkitDisplay}
+            setToolkitDisplay={setToolkitDisplay}
+          />
+        )}
+        {ToolkitDisplay.isCssView && (
+          <CssPreveiw
+            isCssPreview={ToolkitDisplay.isCssView}
+            cssCode={cssCode}
+            toolkitDisplay={ToolkitDisplay}
+            setToolkitDisplay={setToolkitDisplay}
+          />
+        )}
+      </PreviewBackground>
     </section>
   );
 };

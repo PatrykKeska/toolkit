@@ -4,18 +4,22 @@ import clsx from "clsx";
 import { Size } from "./ToolkitElementSection";
 
 interface RenderHtmlProps {
-  textCode: string | undefined;
+  htmlCode: string | undefined;
+  cssCode: string | undefined;
   size: Size;
   variant?: string;
   script?: string;
+  isReverse?: boolean;
 }
 
 export const RenderHtml = ({
-  textCode,
+  htmlCode,
   size,
   variant,
   script,
+  cssCode,
 }: RenderHtmlProps) => {
+  const cssStyles = cssCode + cssDB;
   return (
     <>
       <iframe
@@ -30,6 +34,9 @@ export const RenderHtml = ({
         <head>
             <style>
                 ${cssDB}
+            </style>
+            <style>
+              ${cssCode}
             </style>
   
             <style>
@@ -51,6 +58,7 @@ export const RenderHtml = ({
                   justify-content:center;
                   align-items:center;
                   flex-direction:column;
+                  padding-bottom: 100px;
                   
                 }
 
@@ -60,7 +68,7 @@ export const RenderHtml = ({
             </style>
         </head>
         <body>
-            <div class="developer-mode">${variant ? variant : textCode}</div>
+            <div class="developer-mode">${variant ? variant : htmlCode}</div>
             <script> 
             ${script && script}
             </script>

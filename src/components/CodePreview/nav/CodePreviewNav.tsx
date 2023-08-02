@@ -1,106 +1,96 @@
 import ListboxVariants from "@/components/ListboxVariants";
-import { PickedSize, Size } from "../ToolkitElementSection";
+import { Size, ToolkitDisplayInterface } from "../ToolkitElementSection";
 import { CoppyViewBtn } from "./CoppyViewBtn";
 import { ResizeButtonNav } from "./ResizeButtonNav";
 import { ReverseNavButton } from "./ReverseNavButton";
 
 interface CodePreviewNavProps {
-  textCode: string;
   clicked?: boolean;
-  setIsView: (arg: boolean) => void;
-  isView: boolean;
-  setSize: (arg: Size) => void;
-  pickedSize: PickedSize;
-  setPickedSize: (arg: PickedSize) => void;
   basic?: boolean;
   isReverse?: boolean;
-  setIsReverse?: (arg: boolean) => void;
   showReverseButton?: boolean;
-  setPickedVariant: (variant: number) => void;
   isVariant?: boolean;
   isScript?: boolean;
-  setIsScriptView: (arg: boolean) => void;
-  isScriptView: boolean;
-  scriptCode?: string;
+
+  ToolkitDisplay: ToolkitDisplayInterface;
+  setToolkitDisplay: (arg: ToolkitDisplayInterface) => void;
 }
 
 export const CodePreviewNav = ({
-  textCode,
-  isView,
-  setIsView,
-  setSize,
-  pickedSize,
-  setPickedSize,
   basic,
-  isReverse,
-  setIsReverse,
-  showReverseButton,
-  setPickedVariant,
-  isVariant,
+  ToolkitDisplay,
+  setToolkitDisplay,
   isScript,
-  setIsScriptView,
-  isScriptView,
-  scriptCode,
+  isVariant,
+  isReverse,
 }: CodePreviewNavProps) => {
   return (
-    <nav className='flex-col md:flex-row max-w-[1600px] flex gap-5 items-start my-5 justify-between'>
-      <div className='flex gap-5'>
+    <nav className='flex-col flex-wrap md:flex-row max-w-[1600px] flex gap-5 items-start my-5 justify-between'>
+      <div className='flex gap-5 flex-wrap'>
         <CoppyViewBtn
-          setIsView={setIsView}
-          isView={isView}
           type='view'
-          text={textCode}
-          isScriptView={isScriptView}
-          setIsScriptView={setIsScriptView}
+          toolkitDisplay={ToolkitDisplay}
+          setToolkitDisplay={setToolkitDisplay}
         />
         <CoppyViewBtn
-          setIsView={setIsView}
-          isView={isView}
-          type='coppy'
-          text={isView ? textCode : scriptCode}
+          type='html'
+          toolkitDisplay={ToolkitDisplay}
+          setToolkitDisplay={setToolkitDisplay}
+        />
+        <CoppyViewBtn
+          type='css'
+          toolkitDisplay={ToolkitDisplay}
+          setToolkitDisplay={setToolkitDisplay}
         />
         {isScript && (
           <CoppyViewBtn
-            setIsView={setIsView}
-            isView={isView}
-            setIsScriptView={setIsScriptView}
-            isScriptView={isScriptView}
             type='script'
-            text={textCode}
+            toolkitDisplay={ToolkitDisplay}
+            setToolkitDisplay={setToolkitDisplay}
           />
         )}
-        <ReverseNavButton
-          isReverse={isReverse}
-          setIsReverse={setIsReverse}
-          showReverseButton={showReverseButton}
+        <CoppyViewBtn
+          type='coppy'
+          toolkitDisplay={ToolkitDisplay}
+          setToolkitDisplay={setToolkitDisplay}
         />
-        {isVariant && <ListboxVariants setPickedVariant={setPickedVariant} />}
+
+        {isReverse && (
+          <ReverseNavButton
+            toolkitDisplay={ToolkitDisplay}
+            setToolkitDisplay={setToolkitDisplay}
+          />
+        )}
+        {isVariant && (
+          <ListboxVariants
+            toolkitDisplay={ToolkitDisplay}
+            setToolkitDisplay={setToolkitDisplay}
+          />
+        )}
       </div>
+
       {!basic && (
         <div className='flex gap-5 flex-wrap'>
           <ResizeButtonNav
             icon='📱'
             name='Mobile'
+            toolkitDisplay={ToolkitDisplay}
+            setToolkitDisplay={setToolkitDisplay}
             size={Size.mobile}
-            setSize={setSize}
-            pickedSize={pickedSize}
-            setPickedSize={setPickedSize}
           />
           <ResizeButtonNav
             icon='💻'
             name='Medium'
+            toolkitDisplay={ToolkitDisplay}
+            setToolkitDisplay={setToolkitDisplay}
             size={Size.tablet}
-            setSize={setSize}
-            pickedSize={pickedSize}
-            setPickedSize={setPickedSize}
           />
           <ResizeButtonNav
             icon='🖥️'
             name='Desktop'
+            toolkitDisplay={ToolkitDisplay}
+            setToolkitDisplay={setToolkitDisplay}
             size={Size.desktop}
-            setSize={setSize}
-            pickedSize={pickedSize}
-            setPickedSize={setPickedSize}
           />
         </div>
       )}

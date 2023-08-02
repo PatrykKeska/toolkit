@@ -1,4 +1,6 @@
 import { ToolkitElementSection } from "@/components/CodePreview/ToolkitElementSection";
+import { heroSectionHeadingCss } from "@/db/css/headings/heroSectionHeading.css";
+import { paragraphHeadingCss } from "@/db/css/headings/paragraphHeading.css";
 import {
   heroSectionHeadingLg,
   heroSectionHeadingMd,
@@ -9,6 +11,7 @@ import {
   heroSectionHeadingAltMd,
   heroSectionHeadingAltSm,
 } from "@/db/html/headings/heroSectionHeadingAlt";
+import { paragraphInHeading } from "@/db/html/headings/paragraphInHeading";
 import { PageLayout } from "@/layout/pageLayout";
 
 const HeadingPage = () => {
@@ -16,7 +19,8 @@ const HeadingPage = () => {
     <PageLayout>
       <ToolkitElementSection
         language='javascript'
-        textCode={heroSectionHeadingLg}
+        htmlCode={heroSectionHeadingLg}
+        cssCode={heroSectionHeadingCss}
         elementName='Hero section title'
         isVariant={true}
         variants={[
@@ -28,7 +32,8 @@ const HeadingPage = () => {
 
       <ToolkitElementSection
         language='javascript'
-        textCode={heroSectionHeadingAltLg}
+        cssCode={heroSectionHeadingCss}
+        htmlCode={heroSectionHeadingAltLg}
         elementName='Hero section title Alternative'
         isVariant={true}
         variants={[
@@ -36,6 +41,13 @@ const HeadingPage = () => {
           heroSectionHeadingAltMd,
           heroSectionHeadingAltLg,
         ]}
+      />
+
+      <ToolkitElementSection
+        language='javascript'
+        cssCode={paragraphHeadingCss}
+        htmlCode={paragraphInHeading}
+        elementName='Undertitle in heading'
       />
     </PageLayout>
   );
