@@ -55,7 +55,7 @@ export const Accordions = ({
                 className='inline-block rounded bg-green-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-green-700 ml-5 mt-5 mb-6'
                 onClick={handleClipboard}
               >
-                {!isCopied ? "Coppy File to Clipboard" : "Coppied 🎉"}
+                {!isCopied ? "Copy File to Clipboard" : "Copied 🎉"}
               </button>
             )}
 

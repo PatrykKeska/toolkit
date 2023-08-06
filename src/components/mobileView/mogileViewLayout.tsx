@@ -17,14 +17,15 @@ export const MobileViewLayout = () => {
         How to get full mobile width on mobile devices with no paddigns:
       </h1>
       <Accordions
-        btnText='1. Get the Toolkit.css file or...'
+        btnText='1. Get the Toolkit.css file or or Starter.css file...'
         setModifier={setStep1}
         modifier={step1}
       >
         <p className='my-4'>
-          If you have already included Toolkit.css, otherwise you can copy the
-          utility classNamees from it. Make sure to update the background color
-          if you are not using the root variables from toolkit.css.
+          If you have already included Toolkit.css or Starter.css, otherwise you
+          can copy the utility classNamees from it. Make sure to update the
+          background color if you are not using the root variables from
+          toolkit.css.
         </p>
         <SyntaxHighlighter language='css' style={arta}>
           {MobileViewCss}

@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { ToolkitDisplayInterface } from "../ToolkitElementSection";
 
 interface CoppyViewBtnProps {
-  type: "coppy" | "view" | "reverse" | "script" | "css" | "html";
+  type: "copy" | "view" | "reverse" | "script" | "css" | "html";
   toolkitDisplay: ToolkitDisplayInterface;
   setToolkitDisplay: (arg: ToolkitDisplayInterface) => void;
 }
@@ -106,14 +106,14 @@ export const CoppyViewBtn = ({
           🎨 Css
         </button>
       )}
-      {type === "coppy" && (
+      {type === "copy" && (
         <button
           className={clsx(
             "font-light w-32 h-10 grid place-items-center border-2 rounded-xl hover:bg-green-600 transition-all border-green-600"
           )}
           onClick={handleClipboard}
         >
-          {isCopied ? "🎉 Coppied" : "📋 Coppy"}
+          {isCopied ? "🎉 Copied" : "📋 Copy"}
         </button>
       )}
       {type === "script" && (

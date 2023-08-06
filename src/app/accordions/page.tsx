@@ -1,4 +1,6 @@
 import { ToolkitElementSection } from "@/components/CodePreview/ToolkitElementSection";
+import { accordionCss } from "@/db/css/accordions/accordion.css";
+import { simpleAccordionCss } from "@/db/css/accordions/simpleAccordion.css";
 import { accordion } from "@/db/html/accordions/accordion";
 import { simpleAccordion } from "@/db/html/accordions/simpleAccordion";
 import { accordionScript } from "@/db/js/accordionScript";
@@ -15,12 +17,14 @@ const AccordionsPage = ({}: AccordionsPageProps) => {
         isScript={true}
         language='javascript'
         elementName='Accordion'
+        cssCode={accordionCss}
       />
 
       <ToolkitElementSection
         htmlCode={simpleAccordion}
         language='javascript'
         elementName='Accordion Only HTML & CSS'
+        cssCode={simpleAccordionCss}
       />
     </PageLayout>
   );

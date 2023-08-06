@@ -50,7 +50,7 @@ export const CodePreviewNav = ({
           />
         )}
         <CoppyViewBtn
-          type='coppy'
+          type='copy'
           toolkitDisplay={ToolkitDisplay}
           setToolkitDisplay={setToolkitDisplay}
         />
