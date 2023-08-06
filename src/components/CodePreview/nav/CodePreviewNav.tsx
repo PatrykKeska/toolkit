@@ -3,6 +3,9 @@ import { Size, ToolkitDisplayInterface } from "../ToolkitElementSection";
 import { CoppyViewBtn } from "./CoppyViewBtn";
 import { ResizeButtonNav } from "./ResizeButtonNav";
 import { ReverseNavButton } from "./ReverseNavButton";
+import desktop from "../../../assets/icons/png/desktop.png";
+import tablet from "../../../assets/icons/png/tablet.png";
+import mobile from "../../../assets/icons/png/mobile.png";
 
 interface CodePreviewNavProps {
   clicked?: boolean;
@@ -50,7 +53,7 @@ export const CodePreviewNav = ({
           />
         )}
         <CoppyViewBtn
-          type='coppy'
+          type='copy'
           toolkitDisplay={ToolkitDisplay}
           setToolkitDisplay={setToolkitDisplay}
         />
@@ -72,21 +75,21 @@ export const CodePreviewNav = ({
       {!basic && (
         <div className='flex gap-5 flex-wrap'>
           <ResizeButtonNav
-            icon='📱'
+            icon={mobile}
             name='Mobile'
             toolkitDisplay={ToolkitDisplay}
             setToolkitDisplay={setToolkitDisplay}
             size={Size.mobile}
           />
           <ResizeButtonNav
-            icon='💻'
+            icon={tablet}
             name='Medium'
             toolkitDisplay={ToolkitDisplay}
             setToolkitDisplay={setToolkitDisplay}
             size={Size.tablet}
           />
           <ResizeButtonNav
-            icon='🖥️'
+            icon={desktop}
             name='Desktop'
             toolkitDisplay={ToolkitDisplay}
             setToolkitDisplay={setToolkitDisplay}

@@ -1,4 +1,4 @@
-import { Navi } from "@/components/nav/Navi";
+import { FooterTheme } from "@/layout/footer/footerTheme";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -18,9 +18,10 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${inter.className} bg-slate-800 text-slate-100 container mx-auto p-6 max-w-3xl lg:max-w-[1400px] pb-28`}
+        className={`${inter.className} bg-slate-800 text-slate-100 container mx-auto p-6 max-w-3xl lg:max-w-[1400px] pb-56 relative`}
       >
         {children}
+        <FooterTheme />
       </body>
     </html>
   );

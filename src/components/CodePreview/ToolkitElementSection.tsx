@@ -7,6 +7,7 @@ import { ScriptPreview } from "./ScriptPreview";
 import { CssPreveiw } from "./CssPreview";
 import { HtmlPreview } from "./HtmlPreview";
 import { PreviewBackground } from "./PreviewBackground";
+import { CssRequiredBatch } from "./cssRequiredBatch";
 interface ToolkitElementSectionProps {
   htmlCode: string;
   language: "javascript" | "css";
@@ -19,6 +20,7 @@ interface ToolkitElementSectionProps {
   scriptCode?: string;
   isScript?: boolean;
   cssCode?: string;
+  cssRequired?: boolean;
 }
 
 export enum Size {
@@ -49,6 +51,7 @@ export const ToolkitElementSection = ({
   scriptCode,
   isScript,
   cssCode,
+  cssRequired,
 }: ToolkitElementSectionProps) => {
   const [ToolkitDisplay, setToolkitDisplay] = useState<ToolkitDisplayInterface>(
     {
@@ -74,7 +77,8 @@ export const ToolkitElementSection = ({
         isReverse={reverseTextCode ? true : false}
         showReverseButton={reverseTextCode ? true : false}
       />
-      <h2 className='text-2xl uppercase font-bold'>{elementName}</h2>
+      <h2 className='text-2xl uppercase font-bold my-2'>{elementName}</h2>
+      {cssRequired && <CssRequiredBatch />}
       <PreviewBackground>
         {ToolkitDisplay.isPreview && (
           <RenderHtml

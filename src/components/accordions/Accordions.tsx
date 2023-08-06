@@ -39,7 +39,7 @@ export const Accordions = ({
       <section>
         <span
           onClick={handleAccordion}
-          className='w-full flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900 dark:bg-gray-900 dark:text-white font-bold text-lg mb-5 hover:shadow-2xl transition hover:shadow-cyan-700/50 '
+          className='max-w-5xl mx-auto flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gradient-to-r from-indigo-800 from-10% via-sky-600 via-30% to-purple-800 to-90% hover:bg-pos-100 bg-pos-0 bg-size-200 transition-all duration-500 p-4 font-bold text-lg mb-5'
         >
           {btnText ? btnText : "Click to open"}
         </span>
@@ -49,13 +49,13 @@ export const Accordions = ({
             open && "grid-rows-[1fr]"
           )}
         >
-          <div className='overflow-hidden'>
+          <div className='overflow-hidden flex justify-center items-center max-w-4xl flex-col mx-auto px-10'>
             {code && (
               <button
                 className='inline-block rounded bg-green-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-green-700 ml-5 mt-5 mb-6'
                 onClick={handleClipboard}
               >
-                {!isCopied ? "Coppy File to Clipboard" : "Coppied 🎉"}
+                {!isCopied ? "Copy File to Clipboard" : "Copied 🎉"}
               </button>
             )}
 
