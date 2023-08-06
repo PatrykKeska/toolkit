@@ -23,9 +23,10 @@ export const RecommendedOffersTab = () => {
         <Accordions
           modifier={recommended2}
           setModifier={setrRcommended2}
-          children={<RecommendedOffersDescription />}
           btnText='2. Create Recommended Offers Element in Strapi'
-        />
+        >
+          <RecommendedOffersDescription />
+        </Accordions>
         <Accordions
           modifier={recommended3}
           setModifier={setrRcommended3}

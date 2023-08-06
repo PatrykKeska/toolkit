@@ -12,7 +12,7 @@ export const CarouselBoxesTab = () => {
   const [carousel3, setCarousel3] = useState(false);
   const [carousel4, setCarousel4] = useState(false);
   return (
-    <Tab.Panel>
+    <>
       <section className='py-10'>
         <Accordions
           modifier={carousel1}
@@ -23,9 +23,10 @@ export const CarouselBoxesTab = () => {
         <Accordions
           modifier={carousel2}
           setModifier={setCarousel2}
-          children={<CarouselBoxesDescription />}
           btnText='2. Create carousel boxes element in Strapi'
-        />
+        >
+          <CarouselBoxesDescription />
+        </Accordions>
         <Accordions
           modifier={carousel3}
           setModifier={setCarousel3}
@@ -40,6 +41,6 @@ export const CarouselBoxesTab = () => {
           btnText='4. Add Css - Only for Starter.css'
         />
       </section>
-    </Tab.Panel>
+    </>
   );
 };
