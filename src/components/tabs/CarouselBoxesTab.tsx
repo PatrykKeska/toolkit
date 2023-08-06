@@ -12,7 +12,7 @@ export const CarouselBoxesTab = () => {
   const [carousel3, setCarousel3] = useState(false);
   const [carousel4, setCarousel4] = useState(false);
   return (
-    <>
+    <Tab.Panel>
       <section className='py-10'>
         <Accordions
           modifier={carousel1}
@@ -41,6 +41,6 @@ export const CarouselBoxesTab = () => {
           btnText='4. Add Css - Only for Starter.css'
         />
       </section>
-    </>
+    </Tab.Panel>
   );
 };

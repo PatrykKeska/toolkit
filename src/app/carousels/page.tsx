@@ -18,7 +18,6 @@ const CarouselsPage = () => {
           choose the appropriate classes.
         </p>
       </article>
-
       <Tabs />
 
       {/* <ToolkitElementSection
