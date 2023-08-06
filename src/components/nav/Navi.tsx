@@ -15,7 +15,7 @@ import home from "../../assets/icons/png/home.png";
 export const Navi = () => {
   return (
     <nav className='flex justify-center items-center mx-auto gap-7 max-w-[1500px] flex-wrap my-10 '>
-      <NavCart href='/' icon={home} title='Home Page' />
+      <NavCart href='/' icon={home} title='Getting Started' />
       <NavCart href='/mobile-view' icon={mobile} title='Full mobile view' />
       <NavCart href='/carousels' icon={carousel} title='Carousels' />
       <NavCart href='/buttons' icon={buttons} title='Buttons' />

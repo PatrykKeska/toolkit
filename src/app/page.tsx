@@ -23,6 +23,7 @@ export default function Home() {
           setModifier={setOpenTab}
           modifier={openTab}
           code={cssDB}
+          leannguage='css'
         />
         <Accordions
           btnText={
@@ -33,6 +34,7 @@ export default function Home() {
           setModifier={setOpenTab2}
           modifier={openTab2}
           code={starterCss}
+          leannguage='css'
         />
       </section>
       <h2 className='text-2xl font-bold w-full text-green-400 text-center'>

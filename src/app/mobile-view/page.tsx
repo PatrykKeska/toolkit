@@ -1,5 +1,5 @@
 import { PageLayout } from "@/layout/pageLayout";
-import { MobileViewLayout } from "@/components/mobileView/mogileViewLayout";
+import { MobileViewLayout } from "@/components/mobileView/mobileViewLayout";
 
 const MobileViewPage = () => {
   return (

@@ -1,14 +1,15 @@
 import clsx from "clsx";
 import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { arta } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 interface AccordionsProps {
   modifier: boolean;
   setModifier: (arg: boolean) => void;
-  children?: React.ReactNode | React.ReactNode[];
+  children?: React.ReactNode | React.ReactNode[] | JSX.Element | JSX.Element[];
   btnText?: string;
   code?: string | undefined;
+  leannguage?: "javascript" | "html" | "css";
 }
 
 export const Accordions = ({
@@ -17,6 +18,7 @@ export const Accordions = ({
   children,
   btnText,
   code,
+  leannguage,
 }: AccordionsProps) => {
   const [open, setOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
@@ -39,7 +41,11 @@ export const Accordions = ({
       <section>
         <span
           onClick={handleAccordion}
-          className='max-w-5xl mx-auto flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gradient-to-r from-indigo-800 from-10% via-sky-600 via-30% to-purple-800 to-90% hover:bg-pos-100 bg-pos-0 bg-size-200 transition-all duration-500 p-4 font-bold text-lg mb-5'
+          className={clsx(
+            `max-w-5xl mx-auto flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gradient-to-r from-slate-900 from-25% via-sky-700 via-65% to-green-600 to-90% hover:bg-pos-100 bg-pos-0 bg-size-200 transition-all duration-500 p-4 font-bold text-lg mb-5 capitalize`,
+            open &&
+              "bg-pos-100 bg-size-200 bg-gradient-to-r from-slate-900 from-25% via-sky-700 via-65% to-green-600 to-90% "
+          )}
         >
           {btnText ? btnText : "Click to open"}
         </span>
@@ -61,14 +67,14 @@ export const Accordions = ({
 
             {code ? (
               <SyntaxHighlighter
-                className='min-h-[800px] w-full mx-auto overflow-hidden'
-                language='css'
-                style={arta}
+                className='min-h-[800px] w-full mx-auto overflow-hidden mb-16'
+                language={leannguage ? leannguage : "javascript"}
+                style={a11yDark}
               >
                 {code}
               </SyntaxHighlighter>
             ) : (
-              children
+              <article className='py-10'>{children}</article>
             )}
           </div>
         </div>

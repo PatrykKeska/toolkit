@@ -24,7 +24,7 @@ export const NavCart = ({ href, title, icon }: NavCartProps) => {
          transition-bg duration-300 ease-in-out
          focus:outline-none
          hover:rotate-2 hover:scale-110`,
-        isActive && "bg-gradient-to-r from-green-500 to-green-800 text-white"
+        isActive && "bg-gradient-to-tl from-blue-700 to-purple-800 text-white "
       )}
     >
       <h3 className='font-semibold grid text-center place-items-center'>

@@ -132,7 +132,6 @@
 
 /* Headings Responsive Fonts End */
 
-
 /* Mobile view full width start */
 
 .static-lp-main-wrapper {
@@ -153,9 +152,7 @@
 
 /* Mobile view full end */
 
-
 /* hero section start */
-
 
 .hero-section-wrapper {
   padding: clamp(2.63rem, calc(1.8rem + 3.65vw), 5rem) 20px
@@ -170,27 +167,22 @@
   width: 100%;
 }
 
-.hero-section-title{
+.hero-section-title {
   display: grid;
-  place-items: center
-  ;
+  place-items: center;
 }
-
 
 .hero-section-button {
   margin-top: clamp(1.56rem, calc(1.24rem + 1.44vw), 2.5rem);
 }
 
-
-
-.hero-main-banner{
+.hero-main-banner {
   background-image: url("https://storage.googleapis.com/etravify-prod-le9ohl2h/top_lp_opinie_ffc77848fb.webp?updated_at=2023-05-31T08:05:49.712Z");
   background-size: cover;
   /* height 300px => 512px */
   height: var(--main-banner-height);
   overflow: hidden;
   width: 100%;
-
 }
 /* hero section end */
 
@@ -198,19 +190,16 @@
 
 .services-section {
   background-color: #ffff;
-  width:100%;
-  padding: var(--gap-2xl) var(--gap-3xl); 
+  width: 100%;
+  padding: var(--gap-2xl) var(--gap-3xl);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  
-  
 }
 .services-section__title {
   margin-bottom: 40px;
-  width:100%;
-
+  width: 100%;
 }
 
 .services-section__image {
@@ -218,35 +207,32 @@
   height: 56px;
 }
 .services-section__caption {
-  color:var(--basic-font-color);
-font-family: var(--basic-font-family);
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: 22px;
+  color: var(--basic-font-color);
+  font-family: var(--basic-font-family);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
 }
 
 .services-section__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows: minmax(100px, auto);
-  width:100%;
+  width: 100%;
   grid-gap: 20px;
   place-items: start;
   grid-auto-rows: auto;
 }
 .services-section__item {
-  margin:0;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:24px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
 }
 
-
 /* Services section end  */
-
-
 
 /* Buttons start  */
 
@@ -304,9 +290,7 @@ line-height: 22px;
   margin: 30px 0;
 }
 
-
 /* Buttons end  */
-
 
 /* List Style start */
 
@@ -325,7 +309,6 @@ line-height: 22px;
 }
 
 /* List Style end */
-
 
 /* box section with photo start */
 
@@ -391,7 +374,6 @@ line-height: 22px;
 }
 
 /* box section with photo end */
-
 
 /* static margins  */
 
@@ -502,8 +484,7 @@ line-height: 22px;
   place-items: center;
 }
 
-
-/* Carousel end  */
+/* Carousel start  */
 
 .static-lp-main-wrapper .container .recommended-offers-rdy {
   background-color: var(--main-theme-color) !important;
@@ -607,7 +588,7 @@ line-height: 22px;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 20px;
-  width:100%;
+  width: 100%;
 }
 
 .blog-section__box {
@@ -631,7 +612,6 @@ line-height: 22px;
   background-color: #ffff;
   padding: 15px;
   min-height: 101px;
-
 }
 
 .blog-box__card-type {
@@ -642,7 +622,7 @@ line-height: 22px;
   font-weight: 600;
   line-height: normal;
   text-transform: uppercase;
-  margin: 0 auto 4px auto ;
+  margin: 0 auto 4px auto;
 }
 
 .blog-box__title {
@@ -652,14 +632,10 @@ line-height: 22px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin: 0 auto 4px auto ;
-
+  margin: 0 auto 4px auto;
 }
 
 /* Blog cards end  */
-
-
-
 
 /* Accordion Start */
 
@@ -727,10 +703,9 @@ line-height: 22px;
 
 /* Accordion End  */
 
-
 /* Simple Acoordion Styles Start  */
 
-.space-y-4{
+.space-y-4 {
   width: 100%;
 }
 
@@ -749,7 +724,7 @@ line-height: 22px;
   cursor: pointer;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #D1D2D5;
+  border-bottom: 1px solid #d1d2d5;
   padding: 1rem;
 }
 
@@ -770,14 +745,11 @@ line-height: 22px;
   color: #4a5568;
 }
 
-  summary::-webkit-details-marker {
-    display: none;
-  }
-
+summary::-webkit-details-marker {
+  display: none;
+}
 
 /* Simple Acoordion Styles end  */
-
-
 
 @media (max-width: 500px) {
   /* display classes - usefull to manage headings on mobile  */
@@ -789,30 +761,24 @@ line-height: 22px;
   .d-b {
     display: block;
   }
-
-
-  
 }
 
-@media(min-width:600px){
-
+@media (min-width: 600px) {
   /* Services Section Start */
 
-  .services-section__grid{
+  .services-section__grid {
     place-items: center;
   }
 
   .services-section__item {
-  gap:16px;
-  display:flex;
-  flex-direction:column;
-  text-align:center;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
   }
 
   /* Services Section End */
-
 }
-
 
 @media (max-width: 1000px) {
   .mobile-carousel-offers-button-wrapper {
@@ -845,13 +811,11 @@ line-height: 22px;
   }
   /* boxes with img end  */
 
-
   /* carousel start  */
 
   .mobile-carousel-offers-button-wrapper {
     display: none;
   }
-
 
   .carousel-section-link {
     text-align: right;
@@ -874,47 +838,45 @@ line-height: 22px;
   }
   /* carousel end */
 
+  /* Blog Cards Start  */
 
-    /* Blog Cards Start  */
+  .blog-cards-header-link {
+    text-align: right;
+    font-family: var(--basic-font-family);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 17px; /* 106.25% */
+    text-decoration-line: underline;
+    display: inline-block;
+    padding-bottom: 5px;
+    color: var(--basic-font-color);
+  }
 
-    .blog-cards-header-link {
-      text-align: right;
-      font-family: var(--basic-font-family);
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 17px; /* 106.25% */
-      text-decoration-line: underline;
-      display: inline-block;
-      padding-bottom: 5px;
-      color: var(--basic-font-color);
-    }
-  
-    .blog-section__content{
-      flex-direction: row;
-    }
-  
-    .blog-section__box{
-      flex-direction: column;
-    }
-  
-    .blog-section__thumbnail{
-      width: 100%;
-      max-width: 100%;
-      height: 200px;
-    }
-  
-    .blog-section{
-      padding-bottom:60px ;
-    }
-  
-    /* Blog Cards End  */
+  .blog-section__content {
+    flex-direction: row;
+  }
 
-    /* Services Section Start  */
+  .blog-section__box {
+    flex-direction: column;
+  }
 
-    .services-section__title{
-      text-align: center;
-    }
-    /* Services Section End  */
+  .blog-section__thumbnail {
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+  }
+
+  .blog-section {
+    padding-bottom: 60px;
+  }
+
+  /* Blog Cards End  */
+
+  /* Services Section Start  */
+
+  .services-section__title {
+    text-align: center;
+  }
+  /* Services Section End  */
 }
-

@@ -6,6 +6,7 @@ import img from "../../assets/img/strapiScriptField.jpg";
 import { useState } from "react";
 import { Accordions } from "../accordions/Accordions";
 import { MobileViewCss } from "@/db/css/mobileView/MobileView.css";
+import { CodeBlock } from "../code/codeBlock";
 
 export const MobileViewLayout = () => {
   const [step1, setStep1] = useState(false);
@@ -37,10 +38,9 @@ export const MobileViewLayout = () => {
         setModifier={setStep2}
         modifier={step2}
       >
-        <p className='my-4'>
+        <p className='my-4 inline-block'>
           Now in Strapi go to your static page and add the className
-          <strong className='text-green-500'> static-lp-main-wrapper</strong> in
-          the script field
+          <CodeBlock text='static-lp-main-wrapper' /> in the script field
         </p>
         <Image width={800} height={500} src={img} alt='Strapi script field' />
       </Accordions>
