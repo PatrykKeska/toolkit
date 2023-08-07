@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 interface CssRequiredBatchProps {
-  style: string;
+  style?: string;
 }
 
 export const CssRequiredBatch = ({ style }: CssRequiredBatchProps) => {
