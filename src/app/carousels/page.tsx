@@ -9,10 +9,10 @@ const CarouselsPage = () => {
         <h2 className='text-3xl my-3 font-bold'>
           There are two types of carousels to use:
         </h2>
-        <div className='my-2'>
+        <div className='my-2 flex flex-col items-center md:block'>
           <CodeBlock gray text='Recommended Offers' />
           and <CodeBlock gray text=' Carousel Boxes' />
-        </div>{" "}
+        </div>
         <p className='text-md text-red-500'>
           There are some differences between them, so follow this guide to
           choose the appropriate classes.

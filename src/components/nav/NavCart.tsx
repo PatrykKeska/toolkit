@@ -19,7 +19,7 @@ export const NavCart = ({ href, title, icon }: NavCartProps) => {
     <Link
       href={href}
       className={clsx(
-        `group relative shadow-lg border-2 p-4 w-1/2 text-md md:w-64 md:px-8 md:py-4 rounded-xl
+        `group relative  border-2 p-1 w-[40%] text-sm md:text-md md:w-64 md:px-8 md:py-4 rounded-xl
        bg-slate-100 text-gray-600
          transition-bg duration-300 ease-in-out
          focus:outline-none
@@ -28,7 +28,9 @@ export const NavCart = ({ href, title, icon }: NavCartProps) => {
       )}
     >
       <h3 className='font-semibold grid text-center place-items-center'>
-        {icon && <Image className='w-9 h-9' src={icon} alt={title} />}
+        {icon && (
+          <Image className='w-6 h-6 md:w-9 md:h-9' src={icon} alt={title} />
+        )}
         {title}
       </h3>
     </Link>

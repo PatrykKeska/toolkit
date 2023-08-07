@@ -8,6 +8,7 @@ import { CssPreveiw } from "./CssPreview";
 import { HtmlPreview } from "./HtmlPreview";
 import { PreviewBackground } from "./PreviewBackground";
 import { CssRequiredBatch } from "./cssRequiredBatch";
+import { FullWidthRequired } from "./FullWidthRequiredBatch";
 interface ToolkitElementSectionProps {
   htmlCode: string;
   language: "javascript" | "css";
@@ -21,6 +22,7 @@ interface ToolkitElementSectionProps {
   isScript?: boolean;
   cssCode?: string;
   cssRequired?: boolean;
+  fullWidthRequired?: boolean;
 }
 
 export enum Size {
@@ -52,6 +54,7 @@ export const ToolkitElementSection = ({
   isScript,
   cssCode,
   cssRequired,
+  fullWidthRequired,
 }: ToolkitElementSectionProps) => {
   const [ToolkitDisplay, setToolkitDisplay] = useState<ToolkitDisplayInterface>(
     {
@@ -78,7 +81,10 @@ export const ToolkitElementSection = ({
         showReverseButton={reverseTextCode ? true : false}
       />
       <h2 className='text-2xl uppercase font-bold my-2'>{elementName}</h2>
-      {cssRequired && <CssRequiredBatch />}
+      <div className='flex justify-center gap-5 flex-wrap'>
+        {cssRequired && <CssRequiredBatch />}
+        {fullWidthRequired && <FullWidthRequired />}
+      </div>
       <PreviewBackground>
         {ToolkitDisplay.isPreview && (
           <RenderHtml

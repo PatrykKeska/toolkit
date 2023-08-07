@@ -12,6 +12,8 @@ import mobile from "../../assets/icons/png/mobile.png";
 import modals from "../../assets/icons/png/modals.png";
 import tabs from "../../assets/icons/png/tabs.png";
 import home from "../../assets/icons/png/home.png";
+import pdf from "../../assets/icons/png/pdf.png";
+import news from "../../assets/icons/png/news.png";
 export const Navi = () => {
   return (
     <nav className='flex justify-center items-center mx-auto gap-7 max-w-[1500px] flex-wrap my-10 '>
@@ -28,6 +30,8 @@ export const Navi = () => {
       <NavCart href='/accordions' icon={accordion} title='Accordions' />
       <NavCart href='/counters' icon={counter} title='Counters' />
       <NavCart href='/tabs' icon={tabs} title='Tabs' />
+      <NavCart href='/pdf' icon={pdf} title='Pdf Preview' />
+      <NavCart href='/news' icon={news} title='News' />
     </nav>
   );
 };
