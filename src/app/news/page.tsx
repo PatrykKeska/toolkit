@@ -1,9 +1,20 @@
+import { ToolkitElementSection } from "@/components/CodePreview/ToolkitElementSection";
+import { NewsSchemaCss } from "@/db/css/news/newsSchema.css";
+import { NewsSchemaHtml } from "@/db/html/news/newsSchema.html";
+import { NewsSchemaScript } from "@/db/js/NewsSchema.script";
 import { PageLayout } from "@/layout/pageLayout";
 
 const NewsPage = () => {
   return (
     <PageLayout>
-      <h1>News Page</h1>
+      <ToolkitElementSection
+        htmlCode={NewsSchemaHtml}
+        cssCode={NewsSchemaCss}
+        isScript
+        scriptCode={NewsSchemaScript}
+        cssRequired
+        language='javascript'
+      />
     </PageLayout>
   );
 };

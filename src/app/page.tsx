@@ -1,7 +1,6 @@
 "use client";
 import { Accordions } from "@/components/accordions/Accordions";
 import { Navi } from "@/components/nav/Navi";
-import { ThemeSwitch } from "@/components/switch/themeSwitch";
 import { cssDB } from "@/db/css.db";
 import { starterCss } from "@/db/css/starter.css";
 import { MainPageDescription } from "@/layout/mainPageDescription";
