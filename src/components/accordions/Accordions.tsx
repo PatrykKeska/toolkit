@@ -38,7 +38,7 @@ export const Accordions = ({
 
   return (
     <>
-      <section className=' mx-auto'>
+      <section className=' mx-auto w-full'>
         <span
           onClick={handleAccordion}
           className={clsx(
