@@ -20,7 +20,7 @@ export const Checklist = ({ title, items }: ChecklistProps) => {
         {items.map((item, index) => (
           <li
             key={index}
-            className="w-full rounded-t-lg border-b border-gray-200 transition-all duration-300 hover:cursor-pointer hover:bg-gray-800  dark:border-gray-600"
+            className="flex h-16 w-full rounded-t-lg border-b border-gray-200 transition-all duration-300 hover:cursor-pointer  hover:bg-gray-800 dark:border-gray-600"
           >
             <div className="flex items-center pl-3">
               <input
