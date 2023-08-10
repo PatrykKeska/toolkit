@@ -41,7 +41,7 @@ export const TabsSchemaCss = `
 .tab-button {
   background-color: transparent;
   position: relative;
-  width: 170px;
+  // width: 160px;
   font-family: var(--fancy-font-family);
   font-size: var(--fs-fancy-sm);
   line-height: 30px;
@@ -55,13 +55,14 @@ export const TabsSchemaCss = `
 
 .button-underline {
   /* Adjust this value depending on the width of the button */ 
-  width: 170px;
   bottom: calc(0px - 2px);
   left: 0;
   height: 2px;
   background: var(--basic-font-color);
   transition: all 0.4s;
+  border-radius: 5px;
   position: absolute;
+  overflow: hidden;
 }
 
 .tab-content-wrapper {

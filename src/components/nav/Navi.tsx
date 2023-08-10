@@ -14,24 +14,26 @@ import tabs from "../../assets/icons/png/tabs.png";
 import home from "../../assets/icons/png/home.png";
 import pdf from "../../assets/icons/png/pdf.png";
 import news from "../../assets/icons/png/news.png";
+import podcasts from "../../assets/icons/png/podcasts.png";
 export const Navi = () => {
   return (
-    <nav className='flex justify-center items-center mx-auto gap-7 max-w-[1500px] flex-wrap my-10 '>
-      <NavCart href='/' icon={home} title='Getting Started' />
-      <NavCart href='/mobile-view' icon={mobile} title='Full mobile view' />
-      <NavCart href='/carousels' icon={carousel} title='Carousels' />
-      <NavCart href='/buttons' icon={buttons} title='Buttons' />
-      <NavCart href='/headings' icon={heading} title='Headings' />
-      <NavCart href='/modals' icon={modals} title='Modals' />
-      <NavCart href='/box-img' icon={boximg} title='Box with img' />
-      <NavCart href='/blog-cards' icon={blogCard} title='Blog Cards' />
-      <NavCart href='/hero-section' icon={hero} title='Hero Section' />
-      <NavCart href='/services' icon={services} title='Services' />
-      <NavCart href='/accordions' icon={accordion} title='Accordions' />
-      <NavCart href='/counters' icon={counter} title='Counters' />
-      <NavCart href='/tabs' icon={tabs} title='Tabs' />
-      <NavCart href='/pdf' icon={pdf} title='Pdf Preview' />
-      <NavCart href='/news' icon={news} title='News' />
+    <nav className="mx-auto my-10 flex max-w-[1500px] flex-wrap items-center justify-center gap-7 ">
+      <NavCart href="/" icon={home} title="Getting Started" />
+      <NavCart href="/mobile-view" icon={mobile} title="Full mobile view" />
+      <NavCart href="/carousels" icon={carousel} title="Carousels" />
+      <NavCart href="/buttons" icon={buttons} title="Buttons" />
+      <NavCart href="/headings" icon={heading} title="Headings" />
+      <NavCart href="/modals" icon={modals} title="Modals" />
+      <NavCart href="/box-img" icon={boximg} title="Box with img" />
+      <NavCart href="/blog-cards" icon={blogCard} title="Blog Cards" />
+      <NavCart href="/hero-section" icon={hero} title="Hero Section" />
+      <NavCart href="/services" icon={services} title="Services" />
+      <NavCart href="/accordions" icon={accordion} title="Accordions" />
+      <NavCart href="/counters" icon={counter} title="Counters" />
+      <NavCart href="/tabs" icon={tabs} title="Tabs" />
+      <NavCart href="/pdf" icon={pdf} title="Pdf Preview" />
+      <NavCart href="/news" icon={news} title="News" />
+      <NavCart href="/podcasts" icon={podcasts} title="Podcasts" />
     </nav>
   );
 };
