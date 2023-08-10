@@ -13,8 +13,9 @@ const TabsPage = () => {
         cssCode={TabsSchemaCss}
         scriptCode={TabsSchemaScript}
         isScript={true}
-        language='javascript'
-        elementName='Tabs'
+        language="javascript"
+        elementName="Tabs"
+        cssRequired
       />
 
       <ToolkitElementSection
@@ -22,8 +23,9 @@ const TabsPage = () => {
         cssCode={TabsSchemaCss}
         scriptCode={TabsSchemaScript}
         isScript={true}
-        language='javascript'
-        elementName='Tabs No Content'
+        language="javascript"
+        elementName="Tabs No Content"
+        cssRequired
       />
     </PageLayout>
   );
