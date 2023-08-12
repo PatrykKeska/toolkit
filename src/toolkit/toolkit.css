@@ -6,9 +6,6 @@
   --basic-font-family: "Mulish", sans-serif;
   --fancy-font-family: "Caveat", cursive;
 
-  --main-banner-height: clamp(18.75rem, calc(14.16rem + 20.38vw), 32rem);
-  --blog-cards-main-theme: #ffff;
-
   /* basic-sm: 24.00px → 28.00px */
   --fs-basic-sm: clamp(1.5rem, calc(1.41rem + 0.38vw), 1.75rem);
   /* basic-md: 28.00px → 32.00px */
@@ -56,17 +53,6 @@
   --gap-2xl: clamp(2.5rem, calc(1.63rem + 3.85vw), 5rem);
   /* gap-3xl: 20.00px → 100.00px */
   --gap-3xl: clamp(1.25rem, calc(-0.48rem + 7.69vw), 6.25rem);
-
-  /*   boxes with img desktop height, left auto to adjust depend on content or adjust to your own height */
-
-  /*   --box-height: 435px; */
-  --box-height: auto;
-  --box-min-height: 435px;
-
-  /* Accordion Variables */
-  --accordion-main-theme: #f3f8fb;
-  --accordion-theme-red: #ed1c24;
-  --accordion-theme-blue: #10447d;
 }
 
 /* Headings Responsive Fonts Start */
@@ -143,7 +129,7 @@
   padding-left: 0 !important;
   padding-right: 0 !important;
   /* remove if background no needed */
-  background-color: var(--main-theme-color) !important;
+  /* background-color: var(--main-theme-color) !important; */
 }
 
 .static-lp-main-wrapper * {
@@ -522,9 +508,11 @@
 
 .carousel-boxes-title,
 .recommended-offers-title {
-  background-color: var(--main-theme-color);
+  background-color: white;
   /* adjust padding if you need  */
-  padding: var(--gap-lg) calc(var(--gap-3xl) + 5px) 0 calc(var(--gap-3xl) + 5px);
+  padding: clamp(1.88rem, calc(1.66rem + 0.96vw), 2.5rem)
+    clamp(0rem, calc(1.68rem + -1.92vw), 1.25rem) 0
+    clamp(0rem, calc(1.68rem + -1.92vw), 1.25rem);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -553,6 +541,24 @@
   background-color: white !important;
   display: flex;
   align-items: center;
+}
+
+.mobile-carousel-offers-button {
+  width: 100%;
+  height: 45px;
+  background-color: transparent;
+  display: grid;
+  place-items: center;
+  max-width: 360px;
+  min-width: 260px;
+  border-radius: 50px;
+  color: var(--basic-font-color);
+  font-family: var(--basic-font-family);
+  z-index: 1;
+  font-weight: 700;
+  border: 2px solid var(--basic-font-color);
+  text-decoration: none;
+  margin: 30px 0;
 }
 
 /* Carousel end  */
@@ -797,8 +803,9 @@ summary::-webkit-details-marker {
 
   .each-box-wrapper__box-content-wrapper {
     flex-direction: row;
-    min-height: var(--box-min-height);
-    height: var(--box-height);
+    /* adjust min-height as you need */
+    min-height: 435px;
+    height: auto;
   }
 
   .--flex-reverse-container {

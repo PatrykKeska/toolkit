@@ -13,7 +13,7 @@ export const accordionCss = `
 }
 
 .content__visible {
-  color: var(--blue);
+  color:#10447d;
   font-size: clamp(1rem, 1.5vw, 1.3rem);
   cursor: pointer;
   padding: 5px 10px 5px 30px;

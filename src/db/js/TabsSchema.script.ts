@@ -7,11 +7,10 @@ const buttonWrapper = document.querySelector(".button-wrapper");
 
 const AdjustUnderlineWidth = () => {
   setTimeout(() => {
-  buttonUnderline.style.width = \`\${tabButtons[0].offsetWidth + 5}px\`;
+  buttonUnderline.style.width = \`\${document.querySelector(".tab-button.active").offsetWidth + 5}px\`;
   buttonUnderline.style.left = document.querySelector(".tab-button.active").offsetLeft + "px";
   }, 300);
 }
-
 
 
 

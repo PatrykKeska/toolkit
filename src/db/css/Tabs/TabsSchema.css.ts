@@ -41,7 +41,7 @@ export const TabsSchemaCss = `
 .tab-button {
   background-color: transparent;
   position: relative;
-  // width: 160px;
+  width:100%;
   font-family: var(--fancy-font-family);
   font-size: var(--fs-fancy-sm);
   line-height: 30px;
@@ -102,6 +102,14 @@ export const TabsSchemaCss = `
   display: none;
   padding: 20px;
   animation: fade-in 0.4s ease-in-out forwards;
+}
+
+
+
+@media(min-width: 768px) {
+  .tab-button {
+    width: auto;
+  }
 }
 
 @keyframes fade-in {

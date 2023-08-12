@@ -37,9 +37,11 @@ export const carouselsCss = `
 
 .carousel-boxes-title,
 .recommended-offers-title {
-  background-color: var(--main-theme-color);
+  background-color: white;
   /* adjust padding if you need  */
-  padding: var(--gap-lg) calc(var(--gap-3xl) + 5px) 0 calc(var(--gap-3xl) + 5px);
+  padding: clamp(1.88rem, calc(1.66rem + 0.96vw), 2.5rem)
+    clamp(0rem, calc(1.68rem + -1.92vw), 1.25rem) 0
+    clamp(0rem, calc(1.68rem + -1.92vw), 1.25rem);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -68,6 +70,24 @@ export const carouselsCss = `
   background-color: white !important;
   display: flex;
   align-items: center;
+}
+
+.mobile-carousel-offers-button {
+  width: 100%;
+  height: 45px;
+  background-color: transparent;
+  display: grid;
+  place-items: center;
+  max-width: 360px;
+  min-width: 260px;
+  border-radius: 50px;
+  color: var(--basic-font-color);
+  font-family: var(--basic-font-family);
+  z-index: 1;
+  font-weight: 700;
+  border: 2px solid var(--basic-font-color);
+  text-decoration: none;
+  margin: 30px 0;
 }
 
 /* Carousel end  */

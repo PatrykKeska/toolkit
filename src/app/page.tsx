@@ -10,9 +10,9 @@ export default function Home() {
   const [openTab, setOpenTab] = useState(false);
   const [openTab2, setOpenTab2] = useState(false);
   return (
-    <main className='w-full flex flex-col items-center'>
+    <main className="flex w-full flex-col items-center">
       <MainPageDescription />
-      <section className='w-full'>
+      <section className="w-full">
         <Accordions
           btnText={
             !openTab
@@ -22,7 +22,7 @@ export default function Home() {
           setModifier={setOpenTab}
           modifier={openTab}
           code={cssDB}
-          leannguage='css'
+          leannguage="css"
         />
         <Accordions
           btnText={
@@ -33,10 +33,10 @@ export default function Home() {
           setModifier={setOpenTab2}
           modifier={openTab2}
           code={starterCss}
-          leannguage='css'
+          leannguage="css"
         />
       </section>
-      <h2 className='text-2xl font-bold w-full text-green-400 text-center'>
+      <h2 className="w-full text-center text-2xl font-bold text-green-400">
         Please obtain the required components now.
       </h2>
       <Navi />
