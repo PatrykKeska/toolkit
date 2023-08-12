@@ -166,7 +166,7 @@ export const starterCss = `@import url("https://fonts.googleapis.com/css2?family
   background-image: url("https://storage.googleapis.com/etravify-prod-le9ohl2h/top_lp_opinie_ffc77848fb.webp?updated_at=2023-05-31T08:05:49.712Z");
   background-size: cover;
   /* height 300px => 512px */
-  height: lamp(18.75rem, calc(14.16rem + 20.38vw), 32rem);
+  height: clamp(18.75rem, calc(14.16rem + 20.38vw), 32rem);
   overflow: hidden;
   width: 100%;
 }
