@@ -1,7 +1,7 @@
 export const basicHeroSection = `
 <header class="hero-section-wrapper">
   <section class="hero-section-title">
-    <h1 class="basic-title-lg">ITAKA <br /><span class="fancy-title-lg">Opinie</span></h1>
+    <h1 class="basic-title-lg z-2">ITAKA <br /><span class="fancy-title-lg z-2">Opinie</span></h1>
   </section>
 </header>
 <div class="hero-main-banner" role="banner"></div>
@@ -11,8 +11,8 @@ export const basicHeroSection = `
 export const heroSectionWithButton = `
 <header class="hero-section-wrapper">
   <section class="hero-section-title">
-    <h1 class="basic-title-lg">ITAKA <br /><span class="fancy-title-lg">Opinie</span></h1>
-    <a href='#' class="hero-section-button check-offers-button--red">Zobacz więcej</a>
+    <h1 class="basic-title-lg z-2">ITAKA <br /><span class="fancy-title-lg z-2">Opinie</span></h1>
+    <a href='#' class="hero-section-button check-offers-button--red z-2">Sprawdź ofertę</a>
   </section>
 </header>
 <div class="hero-main-banner" role="banner"></div>
@@ -23,12 +23,12 @@ export const heroSectionWithButton = `
 export const heroSectionWithButtonAndServices = `
 <header class="hero-section-wrapper">
   <section class="hero-section-title">
-    <h1 class="basic-title-lg">ITAKA <br /><span class="fancy-title-lg">Opinie</span></h1>
-    <a href='#' class="hero-section-button check-offers-button--red">Zobacz więcej</a>
+    <h1 class="basic-title-lg z-2">ITAKA <br /><span class="fancy-title-lg z-2">Opinie</span></h1>
+    <a href='#' class="hero-section-button check-offers-button--red z-2">Sprawdź ofertę</a>
   </section>
 </header>
 <div class="hero-main-banner" role="banner"></div>
-<section class="services-section">
+<section class="services-section ">
   <h2 class="services-section__title basic-title-md">
     Mnóstwo atrakcji <br />
     <span class="fancy-title-md">dla całej rodziny</span>

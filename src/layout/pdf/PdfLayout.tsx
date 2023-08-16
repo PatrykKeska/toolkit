@@ -7,12 +7,12 @@ export const PdfLayout = () => {
   return (
     <>
       <Checklist
-        title="Requirments"
+        title="Requirments to use Pdf Preview"
         items={[
-          { text: "Additional Css Added" },
-          { text: "Strapi Full Width Mode" },
+          { text: "Add Css from below" },
+          { text: "Set Full Width toggle in Strapi" },
           {
-            text: "Script Field Class Name Added",
+            text: "Set class name in Strapi at the script field",
             code: "main-lp-wrapper",
           },
         ]}

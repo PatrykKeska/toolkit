@@ -776,6 +776,10 @@ summary::-webkit-details-marker {
     place-items: center;
   }
 
+  .services-section__title {
+    text-align: center;
+  }
+
   .services-section__item {
     gap: 16px;
     display: flex;
@@ -880,11 +884,5 @@ summary::-webkit-details-marker {
 
   /* Blog Cards End  */
 
-  /* Services Section Start  */
-
-  .services-section__title {
-    text-align: center;
-  }
-  /* Services Section End  */
 }
 `;

@@ -19,17 +19,17 @@ export const CodeBlock = ({ text, gray }: CodeBlockProps) => {
   return (
     <>
       {gray ? (
-        <code className='italic inline-block mx-2 bg-gray-200 text-slate-800 py-2 px-5 rounded-md'>
+        <code className="mx-2 inline-block rounded-md bg-gray-200 px-5 py-2 italic text-slate-800">
           {text}
         </code>
       ) : (
         <code
           onClick={handleClick}
-          className='italic inline-block mx-2 bg-gray-900 text-white py-2 px-5 rounded-md hover:cursor-pointer relative'
+          className="relative mx-2 inline-block rounded-md bg-gray-900 px-5 py-2 italic text-white hover:cursor-pointer"
         >
           {text}
           {isClicked && (
-            <span className='absolute bg-red-500 py-2 px-3 -top-10 left-1/2  -translate-x-1/2 rounded-md'>
+            <span className="absolute -top-10 left-1/2 -translate-x-1/2 rounded-md bg-red-500  px-3 py-2">
               Copied
             </span>
           )}

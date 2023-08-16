@@ -54,11 +54,15 @@ line-height: 22px;
 /* Services Section Start min-width:600px */
 
 
-media(min-width:600px){
+@media(min-width:550px){
 
   
     .services-section__grid{
       place-items: center;
+    }
+
+    .services-section__title{
+      text-align: center;
     }
   
     .services-section__item {
@@ -73,11 +77,6 @@ media(min-width:600px){
 
 /* Services Section End min-width:600px */
 
-/* Services Section Start min-width:1000px */
-@media (min-width: 1000px) {
-.services-section__title{
-    text-align: center;
-  }
-}
-  /* Services Section Start min-width:1000px */
+
+
   `;
