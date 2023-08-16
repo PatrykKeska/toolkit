@@ -129,11 +129,15 @@ export const cssDB = `@import url("https://fonts.googleapis.com/css2?family=Cave
   padding-left: 0 !important;
   padding-right: 0 !important;
   /* remove if background no needed */
-  /* background-color: var(--main-theme-color) !important; */
+  background-color: var(--main-theme-color) !important;
 }
 
 .static-lp-main-wrapper * {
   box-sizing: border-box;
+}
+
+.z-2 {
+  z-index: 2;
 }
 
 /* Mobile view full end */
@@ -151,6 +155,7 @@ export const cssDB = `@import url("https://fonts.googleapis.com/css2?family=Cave
   position: relative;
   overflow: hidden;
   width: 100%;
+  text-align: center;
 }
 
 .hero-section-title {
@@ -476,11 +481,27 @@ export const cssDB = `@import url("https://fonts.googleapis.com/css2?family=Cave
   background-color: var(--main-theme-color) !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+  padding-left: clamp(0rem, calc(1.68rem + -1.92vw), 1.25rem);
+  padding-right: clamp(0rem, calc(1.68rem + -1.92vw), 1.25rem);
+}
+
+.static-lp-main-wrapper .container .recommended-offers-rdy--color {
+  background-color: var(--main-theme-color) !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
   padding-left: var(--gap-3xl) !important;
   padding-right: var(--gap-3xl) !important;
 }
 
 .static-lp-main-wrapper .container .carousel-boxes-rdy {
+  background-color: var(--main-theme-color) !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: clamp(0rem, calc(1.68rem + -1.92vw), 1.25rem);
+  padding-right: clamp(0rem, calc(1.68rem + -1.92vw), 1.25rem);
+}
+
+.static-lp-main-wrapper .container .carousel-boxes-rdy--color {
   background-color: var(--main-theme-color) !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -508,7 +529,7 @@ export const cssDB = `@import url("https://fonts.googleapis.com/css2?family=Cave
 
 .carousel-boxes-title,
 .recommended-offers-title {
-  background-color: white;
+  background-color: var(--main-theme-color);
   /* adjust padding if you need  */
   padding: clamp(1.88rem, calc(1.66rem + 0.96vw), 2.5rem)
     clamp(0rem, calc(1.68rem + -1.92vw), 1.25rem) 0
@@ -516,6 +537,11 @@ export const cssDB = `@import url("https://fonts.googleapis.com/css2?family=Cave
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+}
+
+.carousel-boxes-title--color,
+.recommended-offers-title--color {
+  padding: var(--gap-xl) var(--gap-3xl) 0 var(--gap-3xl);
 }
 
 .carousel-boxes-title {
@@ -618,6 +644,7 @@ export const cssDB = `@import url("https://fonts.googleapis.com/css2?family=Cave
   background-color: #ffff;
   padding: 15px;
   min-height: 101px;
+  flex:1;
 }
 
 .blog-box__card-type {
@@ -769,7 +796,7 @@ summary::-webkit-details-marker {
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 550px) {
   /* Services Section Start */
 
   .services-section__grid {
@@ -790,7 +817,7 @@ summary::-webkit-details-marker {
   /* Services Section End */
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 991px) {
   .mobile-carousel-offers-button-wrapper {
     display: grid;
     place-items: center;
@@ -802,7 +829,7 @@ summary::-webkit-details-marker {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 992px) {
   /* boxes with img start  */
 
   .each-box-wrapper__box-content-wrapper {
@@ -883,6 +910,6 @@ summary::-webkit-details-marker {
   }
 
   /* Blog Cards End  */
-
 }
+
 `;
