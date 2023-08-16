@@ -221,6 +221,7 @@ export const cssDB = `@import url("https://fonts.googleapis.com/css2?family=Cave
   justify-content: center;
   align-items: center;
   gap: 24px;
+  height: 100%;
 }
 
 /* Services section end  */
@@ -644,7 +645,7 @@ export const cssDB = `@import url("https://fonts.googleapis.com/css2?family=Cave
   background-color: #ffff;
   padding: 15px;
   min-height: 101px;
-  flex:1;
+  flex: 1;
 }
 
 .blog-box__card-type {
@@ -812,6 +813,7 @@ summary::-webkit-details-marker {
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: start;
   }
 
   /* Services Section End */
@@ -911,5 +913,6 @@ summary::-webkit-details-marker {
 
   /* Blog Cards End  */
 }
+
 
 `;

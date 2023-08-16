@@ -221,6 +221,7 @@
   justify-content: center;
   align-items: center;
   gap: 24px;
+  height: 100%;
 }
 
 /* Services section end  */
@@ -812,6 +813,7 @@ summary::-webkit-details-marker {
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: start;
   }
 
   /* Services Section End */

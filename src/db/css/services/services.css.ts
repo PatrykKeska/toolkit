@@ -46,6 +46,7 @@ line-height: 22px;
   justify-content:center;
   align-items:center;
   gap:24px;
+  height:100%;
 }
 
 
@@ -70,6 +71,8 @@ line-height: 22px;
     display:flex;
     flex-direction:column;
     text-align:center;
+    justify-content: start;
+
     }
 
   
