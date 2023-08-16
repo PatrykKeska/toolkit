@@ -481,11 +481,27 @@
   background-color: var(--main-theme-color) !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+  padding-left: clamp(0rem, calc(1.68rem + -1.92vw), 1.25rem);
+  padding-right: clamp(0rem, calc(1.68rem + -1.92vw), 1.25rem);
+}
+
+.static-lp-main-wrapper .container .recommended-offers-rdy--color {
+  background-color: var(--main-theme-color) !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
   padding-left: var(--gap-3xl) !important;
   padding-right: var(--gap-3xl) !important;
 }
 
 .static-lp-main-wrapper .container .carousel-boxes-rdy {
+  background-color: var(--main-theme-color) !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: clamp(0rem, calc(1.68rem + -1.92vw), 1.25rem);
+  padding-right: clamp(0rem, calc(1.68rem + -1.92vw), 1.25rem);
+}
+
+.static-lp-main-wrapper .container .carousel-boxes-rdy--color {
   background-color: var(--main-theme-color) !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -513,7 +529,7 @@
 
 .carousel-boxes-title,
 .recommended-offers-title {
-  background-color: white;
+  background-color: var(--main-theme-color);
   /* adjust padding if you need  */
   padding: clamp(1.88rem, calc(1.66rem + 0.96vw), 2.5rem)
     clamp(0rem, calc(1.68rem + -1.92vw), 1.25rem) 0
