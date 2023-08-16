@@ -54,6 +54,7 @@ export const blogCardsCss = `
   background-color: #ffff;
   padding: 15px;
   min-height: 101px;
+  flex: 1;
 
 }
 
