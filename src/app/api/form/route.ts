@@ -1,28 +1,15 @@
-import { NextRequest, NextResponse } from "next/server";
-
-export async function POST(req: NextRequest, res: NextResponse) {
-  res.headers.set("Access-Control-Allow-Origin", "*");
-  res.headers.set("Access-Control-Allow-Methods", "POST, OPTIONS");
-  res.headers.set(
-    "AÀccess-Control-Allow-Headers",
-    "Content-Type, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
-  );
-  if (req.method === "OPTIONS") {
-    return new Response(null, {
-      status: 200,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "POST, OPTIONS",
-        "Access-Control-Allow-Headers":
-          "Content-Type, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
-      },
-    });
+import { NextResponse } from "next/server";
+import { NextApiResponse } from "next";
+export async function POST(request: Request, response: NextApiResponse) {
+  if (request.method == "OPTIONS") {
+    return response.status(200).send(null);
   }
 
-  const body = await req.json();
+  const origin = request.headers.get("origin");
+  const body = await request.json();
   console.log(body);
 
-  return new Response(
+  return new NextResponse(
     JSON.stringify({
       message: "Wiadomość zostła wysłana. Dziękujemy!",
       success: true,
@@ -30,10 +17,9 @@ export async function POST(req: NextRequest, res: NextResponse) {
     {
       status: 200,
       headers: {
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": origin || "*",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-        "Access-Control-Allow-Headers":
-          "Content-Type, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+        "Content-Type": "application/json",
       },
     },
   );
