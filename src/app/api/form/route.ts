@@ -1,6 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest, res: NextResponse) {
+  if (req.method === "OPTIONS") {
+    return new Response(
+      JSON.stringify({
+        message: "Wiadomość zostła wysłana. Dziękujemy!",
+        success: true,
+      }),
+    );
+  }
+
   const origin = req.headers.get("origin");
   const body = await req.json();
   console.log(body);
