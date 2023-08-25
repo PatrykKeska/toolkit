@@ -35,6 +35,10 @@ export const carouselsCss = `
   margin-top: 0 !important;
 }
 
+.recommended-offers-rdy header.mb4 {
+  display: none !important ;
+}
+
 .carousel-boxes-title,
 .recommended-offers-title {
   background-color: white;
